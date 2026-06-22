@@ -1,9 +1,9 @@
 import "./StatsBand.css";
 
 const STATS = [
-  { value: "500+", label: "Members across Nairobi" },
-  { value: "40+", label: "Walks & gatherings yearly" },
-  { value: "8", label: "Years building this network" },
+  { value: "360+", label: "Members across Nairobi" },
+  { value: "10+", label: "Walks & gatherings yearly" },
+  { value: "1", label: "Year building this network" },
   { value: "1", label: "Home, wherever we meet" },
 ];
 
