@@ -1,0 +1,53 @@
+.page-banner {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.page-banner__image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 20, 16, 0.62) 0%,
+    rgba(26, 20, 16, 0.45) 50%,
+    rgba(26, 20, 16, 0.8) 100%
+  );
+}
+
+.page-banner__content {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--nav-height);
+  max-width: 700px;
+}
+
+.page-banner__content h1 {
+  color: var(--color-white);
+  font-size: clamp(34px, 5vw, 54px);
+  margin-top: 16px;
+}
+
+.page-banner__content p {
+  color: rgba(255, 250, 243, 0.85);
+  margin-top: 16px;
+  font-size: 17px;
+  max-width: 50ch;
+}
+
+.page-banner__horizon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}

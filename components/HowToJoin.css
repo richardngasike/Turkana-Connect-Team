@@ -1,0 +1,47 @@
+.how-to-join__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 56px;
+}
+
+.how-to-join__card {
+  background: rgba(255, 250, 243, 0.06);
+  border: 1px solid rgba(255, 250, 243, 0.14);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  transition: transform 0.4s var(--ease-out), background 0.4s ease;
+}
+
+.how-to-join__card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 250, 243, 0.1);
+}
+
+.how-to-join__step {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ochre);
+}
+
+.how-to-join__card h3 {
+  font-size: 21px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+
+.how-to-join__card p {
+  font-size: 14.5px;
+}
+
+.how-to-join__cta {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .how-to-join__grid {
+    grid-template-columns: 1fr;
+  }
+}

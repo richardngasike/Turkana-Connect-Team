@@ -1,0 +1,316 @@
+/* ===========================================================
+   TURKANA NETWORK CONNECT — GLOBAL STYLES
+   Design tokens: earth + jade lake palette, Fraunces + Inter
+   =========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* --- Color tokens --- */
+  --color-ink: #1a1410;
+  --color-ink-soft: #3d3027;
+  --color-sand: #f7f2ea;
+  --color-sand-deep: #efe6d6;
+  --color-clay: #c76b3d;
+  --color-clay-deep: #a8512a;
+  --color-jade: #2d6e63;
+  --color-jade-deep: #1f4f47;
+  --color-ochre: #e8a23d;
+  --color-white: #fffaf3;
+
+  /* --- Gradients (signature horizon motif) --- */
+  --gradient-horizon: linear-gradient(
+    90deg,
+    var(--color-ochre) 0%,
+    var(--color-clay) 35%,
+    var(--color-jade) 100%
+  );
+  --gradient-horizon-soft: linear-gradient(
+    90deg,
+    rgba(232, 162, 61, 0.4) 0%,
+    rgba(199, 107, 61, 0.4) 35%,
+    rgba(45, 110, 99, 0.4) 100%
+  );
+
+  /* --- Typography --- */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* --- Layout --- */
+  --max-width: 1240px;
+  --nav-height: 84px;
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  /* --- Shadows --- */
+  --shadow-soft: 0 4px 24px rgba(26, 20, 16, 0.08);
+  --shadow-medium: 0 12px 40px rgba(26, 20, 16, 0.14);
+  --shadow-strong: 0 24px 64px rgba(26, 20, 16, 0.22);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-sand);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--color-ink-soft);
+}
+
+/* Visible keyboard focus throughout */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-ochre);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Shared layout utilities --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-clay-deep);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: var(--color-clay-deep);
+  display: inline-block;
+}
+
+/* --- Signature: horizon divider --- */
+.horizon-divider {
+  height: 3px;
+  width: 100%;
+  background: var(--gradient-horizon);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.horizon-divider--thin {
+  height: 1px;
+  opacity: 0.55;
+}
+
+.horizon-divider--center {
+  width: 72px;
+  margin: 0 auto;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out),
+    background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-jade);
+  color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: var(--color-jade-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1.5px solid rgba(26, 20, 16, 0.22);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.btn-ghost-light {
+  background: rgba(255, 250, 243, 0.12);
+  color: var(--color-white);
+  border: 1.5px solid rgba(255, 250, 243, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.btn-ghost-light:hover {
+  background: rgba(255, 250, 243, 0.22);
+  transform: translateY(-2px);
+}
+
+/* --- Section spacing rhythm --- */
+.section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section--tight {
+  padding: 88px 0;
+}
+
+.section--sand {
+  background-color: var(--color-sand);
+}
+
+.section--deep {
+  background-color: var(--color-jade-deep);
+  color: var(--color-white);
+}
+
+.section--deep h2,
+.section--deep h3,
+.section--deep p {
+  color: var(--color-white);
+}
+
+.section--deep .eyebrow {
+  color: var(--color-ochre);
+}
+
+.section--deep .eyebrow::before {
+  background: var(--color-ochre);
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+
+.section-head h2 {
+  font-size: clamp(32px, 4.2vw, 48px);
+  margin-top: 16px;
+}
+
+.section-head p {
+  margin-top: 18px;
+  font-size: 17px;
+  max-width: 540px;
+}
+
+/* --- Reveal on scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Responsive container padding --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .section {
+    padding: 84px 0;
+  }
+  .section--tight {
+    padding: 64px 0;
+  }
+}
